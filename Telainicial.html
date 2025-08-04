@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alec - Desenvolvedor de Sistemas</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="brand">
+      <img src="MN.jpg" alt="Foto de Alec" class="brand__avatar"
+           onerror="this.src='https://placehold.co/120x120?text=Alec'">
+      <span class="brand__name">Alec</span>
+    </div>
+
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="#projetos" class="menu__link">Projetos</a>
+      <a href="#sobre" class="menu__link">Sobre</a>
+      <a href="#contato" class="menu__link">Contato</a>
+    </nav>
+
+    <div class="actions">
+      <button id="themeToggle" class="btn btn--ghost" aria-label="Alternar tema">
+        <span class="icon" aria-hidden="true">🌓</span>
+        <span class="sr-only">Alternar tema claro/escuro</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio" aria-labelledby="herotitle">
+      <div class="hero__content">
+        <h1 id="herotitle" class="hero__title">Desenvolvedor de Sistemas</h1>
+        <p class="hero__subtitle">
+          Técnico em Desenvolvimento de Sistemas · Interesse em Front‑end, UI/UX e Web Apps
+        </p>
+        <ul class="hero__info">
+          <li>🛠️ HTML · CSS · JavaScript · Design Responsivo</li>
+          <li>🎯 Projetos com Spline 3D e interfaces dinâmicas</li>
+          <li>📧 Alecmoraes7@gmail.com</li>
+        </ul>
+
+        <div class="hero__cta">
+          <a href="#projetos" id="b-projetos" class="btn btn--primary">Ver projetos</a>
+          <a href="#contato" class="btn btn--secondary">Fale comigo</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="fade-line">
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="sobre" aria-labelledby="sobretitle">
+      <div class="sobre__grid">
+        <div class="sobre__media">
+          <img src="MN.jpg" alt="Foto de Alec Moraes" class="sobre__foto"
+               onerror="this.src='https://placehold.co/600x800?text=Foto+Indisponivel'">
+        </div>
+
+        <div class="sobre__content">
+          <h2 id="sobretitle" class="section__title">Sobre mim</h2>
+          <div class="divider fade-line" role="presentation"></div>
+          <div class="sobre__text">
+            <p>Olá! Me chamo <strong>Alec Moraes</strong>, tenho 16 anos e sou estudante do 2º ano do Ensino Médio com foco em Desenvolvimento de Sistemas. Amo tecnologia, design e tudo que envolve criatividade e inovação. Estou sempre aprendendo novas ferramentas e linguagens.</p>
+            <p>Hoje, estou aprofundando projetos pessoais e aprimorando minhas habilidades em <strong>HTML, CSS, JavaScript</strong> e <strong>design responsivo</strong>. Tenho experiência com <strong>Spline 3D</strong>, além de bibliotecas e frameworks para criar interfaces dinâmicas e funcionais.</p>
+            <p>Sou curioso, dedicado e vejo cada projeto como oportunidade de crescimento. Busco entregar algo com propósito e construir uma carreira sólida em tecnologia.</p>
+            <p>Se quiser trocar ideias, ver meus projetos ou colaborar, fala comigo!</p>
+          </div>
+
+          <div class="sobre__cta">
+            <a href="curriculo.pdf" class="btn btn--secondary">📄 Baixar portfólio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" aria-labelledby="skillstitle">
+      <h2 id="skillstitle" class="section__title">Minhas skills</h2>
+      <ul class="skills__grid" role="list">
+        <li><img src="HTML5.png" alt="HTML"></li>
+        <li><img src="CSS3.png" alt="CSS"></li>
+        <li><img src="JS.png" alt="JavaScript"></li>
+        <li><img src="React-icon.svg.png" alt="React"></li>
+        <li><img src="nextjs.png" alt="Next.js"></li>
+        <li><img src="Sass.png" alt="Sass"></li>
+        <li><img src="Tailwind.png" alt="Tailwind CSS"></li>
+        <li><img src="figma-icon.png" alt="Figma"></li>
+        <li><img src="AI.jpg" alt="Illustrator"></li>
+        <li><img src="Photoshop.png" alt="Photoshop"></li>
+        <li><img src="Sketch.png" alt="Sketch"></li>
+        <li><img src="Github.png" alt="Git"></li>
+        <li><img src="Git__.png" alt="GitHub"></li>
+      </ul>
+    </section>
+
+    <hr class="fade-line">
+
+    <!-- PROJETOS (Carrossel) -->
+    <section id="projetos" class="projetos" aria-labelledby="projetostitle">
+      <h2 id="projetostitle" class="section__title">Projetos</h2>
+
+      <div class="carousel">
+        <button class="carousel__arrow carousel__arrow--prev" aria-label="Anterior" id="prevBtn">←</button>
+
+        <div class="carousel__viewport" aria-live="polite">
+          <div class="carousel__track" id="carouselTrack">
+            <!-- Slide 1 -->
+            <article class="card">
+              <img src="Tela de login.png" alt="Tela de login" class="card__img"
+                   onerror="this.src='https://placehold.co/800x450?text=Tela+Login'">
+              <div class="card__body">
+                <h3 class="card__title">Tela de login</h3>
+                <p class="card__text">Tela de login 100% responsiva.</p>
+                <div class="card__cta">
+                  <a href="Tela-de-Login/Index.html" class="btn btn--primary" target="_blank">Ver projetos</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 2 -->
+            <article class="card">
+              <img src="Carros.png" alt="Site de Carros" class="card__img"
+                   onerror="this.src='https://placehold.co/800x450?text=Carros'">
+              <div class="card__body">
+                <h3 class="card__title">Carros</h3>
+                <p class="card__text">Site moderno para marcas de automóveis.</p>
+                <div class="card__cta">
+                  <a href="HTML-Carro/Carro.html" class="btn btn--primary" target="_blank">Ver projetos</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Slide 3 -->
+            <article class="card">
+              <img src="Figma.png" alt="Projeto Figma" class="card__img"
+                   onerror="this.src='https://placehold.co/800x450?text=Figma'">
+              <div class="card__body">
+                <h3 class="card__title">Projeto no Figma</h3>
+                <p class="card__text">Protótipo do app da PlayStation.</p>
+                <div class="card__cta">
+                  <a href="https://www.figma.com/proto/XBQmIgOyWdyjsjMPzlHHRg/Untitled?node-id=32-31&p=f&t=JkWqLQblyRqlf7Lv-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=32%3A31&show-proto-sidebar=1" class="btn btn--primary" target="_blank">Ver projetos</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <button class="carousel__arrow carousel__arrow--next" aria-label="Próximo" id="nextBtn">→</button>
+      </div>
+    </section>
+
+    <hr class="fade-line">
+
+    <!-- CONTATO -->
+    <section id="contato" class="contato" aria-labelledby="contatotitle">
+      <div class="contato__wrap">
+        <h2 id="contatotitle" class="section__title">Entre em contato</h2>
+
+       
+
+        <form id="contact-form" class="form" autocomplete="on">
+          <div class="form__row">
+            <label class="form__field">
+              <span class="form__label">Nome</span>
+              <input type="text" placeholder="Qual é seu nome?" class="input" required>
+            </label>
+
+            <label class="form__field">
+              <span class="form__label">Email</span>
+              <input type="email" placeholder="Qual o seu email?" class="input" required>
+            </label>
+          </div>
+
+          <label class="form__field">
+            <span class="form__label">Sua mensagem</span>
+            <textarea rows="6" placeholder="Qual é sua mensagem?" class="textarea" required></textarea>
+          </label>
+
+
+          
+          <button type="submit" class="btn btn--primary form__submit">Enviar</button>
+
+           <!-- Socials -->
+        <div class="socials" aria-label="Redes sociais">
+          <a class="socials__btn" href="https://github.com/seu-usuario" target="_blank" rel="noopener" aria-label="GitHub">
+            <img src="Github.png" alt="" aria-hidden="true">
+            <span>GitHub</span>
+          </a>
+          <a class="socials__btn" href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="linkedin.png" alt="" aria-hidden="true">
+            <span>LinkedIn</span>
+          </a>
+          <a class="socials__btn" href="https://www.instagram.com/seu-usuario" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="instagram.png" alt="" aria-hidden="true">
+            <span>Instagram</span>
+          </a>
+        </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>&copy; 2025 Alec Moraes. Todos os direitos reservados.</div>
+      <nav class="footer__nav" aria-label="Navegação do rodapé">
+        <a href="#inicio">Início</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- JS (tema + carrossel + efeito linhas) -->
+  <script>
+    // ----- Tema claro/escuro -----
+    (function initTheme(){
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', initial);
+    })();
+
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // ----- Carrossel -----
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let index = 0;
+
+    function updateCarousel(){
+      const cards = track.children.length;
+      const offset = index * 100;
+      track.style.transform = `translateX(-${offset}%)`;
+      [...track.children].forEach((el, i) => {
+        el.setAttribute('aria-hidden', i !== index);
+        el.tabIndex = i === index ? 0 : -1;
+      });
+    }
+
+    function nextSlide(){
+      const cards = track.children.length;
+      index = (index + 1) % cards;
+      updateCarousel();
+    }
+    function prevSlide(){
+      const cards = track.children.length;
+      index = (index - 1 + cards) % cards;
+      updateCarousel();
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    window.addEventListener('load', updateCarousel);
+    window.addEventListener('resize', updateCarousel);
+
+    // ----- Efeito "linhas sumindo" (hr e dividers) -----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('inview');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-line').forEach(el => observer.observe(el));
+
+/*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message')  
+
+const sendEmail = (e) => {
+    e.preventDefault()
+
+    // serviceID - templateID - #form - publicKey
+    emailjs.sendForm('service_yes6e2k', 'template_lyy9gam', '#contact-form', 'xgei8F24_eWJqMRMi')
+    .then(() => {
+        contactMessage.textContent = 'Mensagem enviada com sucesso ✅'
+
+        setTimeout(() => {
+            contactMessage.textContent = ''
+        }, 5000)
+
+        contactForm.reset()
+    }, () => {
+        contactMessage.textContent = 'Mensagem não enviada, erro no serviço ❌'
+    })
+}
+
+contactForm.addEventListener('submit', sendEmail)
+    
+  </script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+      </script>
+</body>
+</html>

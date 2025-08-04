@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrossel Metálico</title>
+  <link rel="stylesheet" href="Style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="MN.jpg" alt="Foto de Alec" class="foto-perfil">
+      <h1>Alec</h1>
+    </div>
+    <nav>
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <button class="toggle-darkmode" title="Modo Escuro">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <div class="carrossel-container">
+    <div class="metal-effect"></div>
+
+    <div class="carrossel">
+      <!-- Slide 1 -->
+      <div class="slide slide-1 active">
+        <img src="Tela de login.png" alt="Tela de login">
+        <h2>Tela de login</h2>
+        <p>Tela de login 100% responsiva.</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide slide-2">
+        <img src="Carros.png" alt="Site de Carros">
+        <h2>Carros</h2>
+        <p>Site para demonstrar marcas de forma moderna e sofisticada.</p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide slide-3">
+        <img src="Figma.png" alt="Projeto Figma">
+        <h2>Projeto no Figma</h2>
+        <p>Representação do aplicativo da PlayStation.</p>
+      </div>
+
+      <!-- Setas dentro do carrossel -->
+      <div class="arrow prev">
+        <svg viewBox="0 0 24 24">
+          <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+        </svg>
+      </div>
+      <div class="arrow next">
+        <svg viewBox="0 0 24 24">
+          <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="indicators">
+      <div class="indicator active" data-index="0"></div>
+      <div class="indicator" data-index="1"></div>
+      <div class="indicator" data-index="2"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');
+      const indicators = document.querySelectorAll('.indicator');
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+
+      function updateSlide() {
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(ind => ind.classList.remove('active'));
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlide();
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlide();
+      }
+
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      indicators.forEach(ind => {
+        ind.addEventListener('click', function () {
+          currentSlide = parseInt(this.getAttribute('data-index'));
+          updateSlide();
+        });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') nextSlide();
+        else if (e.key === 'ArrowLeft') prevSlide();
+      });
+
+      let autoplay = setInterval(nextSlide, 5000);
+      const carrossel = document.querySelector('.carrossel');
+      carrossel.addEventListener('mouseenter', () => clearInterval(autoplay));
+      carrossel.addEventListener('mouseleave', () => {
+        autoplay = setInterval(nextSlide, 5000);
+      });
+    });
+  </script>
+</body>
+</html>
